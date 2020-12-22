@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SpinningWheel/Wheel.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 200.0
+
+[node name="Wheel" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Pegs" type="Node2D" parent="."]
+
+[node name="Names" type="Node2D" parent="."]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://SpinningWheel/Wheel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://SpinningWheel/ArrowPin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/gameshow.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/bg_music.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/yaay.wav" type="AudioStream" id=6]
+[ext_resource path="res://StarRandomizer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ChosenOne.tscn" type="PackedScene" id=8]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BG" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1020.0
+margin_bottom = 600.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpinningWheel" type="Node2D" parent="."]
+position = Vector2( -19.5999, 40.9813 )
+
+[node name="Wheel" parent="SpinningWheel" instance=ExtResource( 1 )]
+position = Vector2( 529.197, 298.491 )
+
+[node name="ArrowPin" parent="SpinningWheel" instance=ExtResource( 3 )]
+position = Vector2( 790.635, 294.56 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -8.0
+autoplay = true
+
+[node name="Yay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="StarRandomizer" parent="." instance=ExtResource( 7 )]
+
+[node name="ChosenOne" parent="." instance=ExtResource( 8 )]
+position = Vector2( 503.234, 70.7465 )

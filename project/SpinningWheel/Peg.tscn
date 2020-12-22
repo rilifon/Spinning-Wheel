@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 7.0
+
+[node name="Peg" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -7.5
+margin_top = -7.5
+margin_right = 7.5
+margin_bottom = 7.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+margin_left = 0.5
+margin_top = 0.5
+margin_right = 13.5
+margin_bottom = 13.5
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
